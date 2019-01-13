@@ -1,0 +1,12 @@
+nav {
+  padding: 20px 0;
+}
+nav a {
+  display: inline-block;
+  margin-right: 20px;
+  color: #fff;
+  text-decoration: none;
+}
+nav a.active {
+  text-decoration: underline;
+}

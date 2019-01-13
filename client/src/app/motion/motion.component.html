@@ -1,0 +1,42 @@
+<div class="app-vehicles">
+  <button class="add" mat-raised-button (click)="edit()" color="primary"><mat-icon>add</mat-icon>Add</button>
+
+  <table mat-table [dataSource]="data" class="mat-elevation-z8 table">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID таб. движение </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="id_car">
+      <th mat-header-cell *matHeaderCellDef> ID Автомобиля </th>
+      <td mat-cell *matCellDef="let element"> {{element.id_car}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="id_driver">
+        <th mat-header-cell *matHeaderCellDef> ID Водителя </th>
+        <td mat-cell *matCellDef="let element"> {{element.id_driver }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="id_customers">
+          <th mat-header-cell *matHeaderCellDef> ID Заказа </th>
+          <td mat-cell *matCellDef="let element"> {{element.id_customers}} </td>
+        </ng-container>
+
+    
+    <ng-container matColumnDef="id_dispatcher">
+      <th mat-header-cell *matHeaderCellDef> ID Диспетчера </th>
+      <td mat-cell *matCellDef="let element"> {{element.id_dispatcher}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="money">
+        <th mat-header-cell *matHeaderCellDef> Сумма заказа </th>
+        <td mat-cell *matCellDef="let element"> {{element.money}} </td>
+      </ng-container>
+  
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="edit(row)"></tr>
+  </table>
+</div>
+
+  

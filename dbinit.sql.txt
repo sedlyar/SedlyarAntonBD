@@ -1,0 +1,59 @@
+-- WITH vehicle_s as (insert into vehicle_specifications (class, fuel_consumption, tank_size, capacity) VALUES ('A', 2.0, 3.0, 1) returning id)
+-- insert into vehicle_models (brand_name, specification_id) VALUES ('Brand name', (select id from vehicle_s));
+--
+-- WITH vehicle as (insert into vehicles (number, model_id) VALUES ('1A', 1) returning id)
+-- insert into vehicle_conditions (gas, vehicle_id) VALUES (0, (select id from vehicle));
+
+-- insert into routes (number, start_station_name, end_station_name) VALUES ('1', 'start', 'end');
+CREATE database taxi;
+Drop database taxi;
+npm i //утогновка зависимостей
+npm start //запуск сервера
+
+
+CREATE TABLE IF NOT EXISTS color (
+    id serial primary key,
+    name_color varchar ot null
+);
+
+CREATE TABLE IF NOT EXISTS car_brand (
+    id serial primary key,
+    brand_name varchar not null
+);
+
+CREATE TABLE IF NOT EXISTS car (
+    id serial primary key,
+    id_car_brand int not null references car_brand(id),
+    id_color int references color(id)
+);
+
+CREATE TABLE IF NOT EXISTS customers (
+    id serial primary key,
+    ful_name varchar not null,
+    id_streets varchar not null
+    house_number int not null,
+    apartment_number int not null,
+    phone_number int not null
+);
+
+CREATE TABLE IF NOT EXISTS driver (
+    id serial primary key,
+    ful_name varchar not null
+);
+CREATE TABLE IF NOT EXISTS dispatcher (
+    id serial primary key,
+    dispatcher_name varchar not null
+);
+CREATE TABLE IF NOT EXISTS motion (
+    id serial primary key,
+    id_car int not null references car(id),
+    id_driver int not null references driver(id),
+    id_customers int not null references customers(id),
+    id_dispatcher int not null references dispatcher(id),
+    money double not null
+);
+CREATE TABLE Users (
+  id serial primary key,
+  email varchar not null,
+  password varchar not null
+);

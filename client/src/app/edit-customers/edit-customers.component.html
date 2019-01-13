@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>{{action === FORM_ACTION.ADD ? 'Add vehicle' : 'Update vehicle'}}</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="form">
+    <mat-form-field>
+      <input formControlName="ful_name" name="ФИО" matInput placeholder="ФИО">
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName="id_streets" name="Улица" matInput placeholder=" Улицы" type="number">
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName="house_number" name="Дом" matInput placeholder=" Дом" type="number">
+    </mat-form-field>
+      <mat-form-field>
+      <input formControlName="apartment_number" name="Квартира" matInput placeholder=" Квартира" type="number">
+    </mat-form-field>
+      <mat-form-field>
+    <input formControlName="phone_number" name="Телефон" matInput placeholder=" Телефон" type="number">
+       </mat-form-field>
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button [mat-dialog-close]="false">CANCEL</button>
+  <button *ngIf="action === FORM_ACTION.EDIT" mat-raised-button (click)="delete()" color="accent">Delete</button>
+  <button mat-raised-button (click)="save()" color="primary">Save</button>
+</mat-dialog-actions>
+

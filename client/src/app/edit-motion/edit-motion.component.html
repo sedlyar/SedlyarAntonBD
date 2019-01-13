@@ -1,0 +1,30 @@
+<h2 mat-dialog-title>Update motion</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="form">
+    <!-- <mat-form-field>
+      <input formControlName="id" name="id" matInput placeholder="ID таб. движение" type="number">
+    </mat-form-field> -->
+    <mat-form-field>
+    <input formControlName="id_car" name="id_car" matInput placeholder="ID Автомобиля" type="number">
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName="id_driver" name=" id_driver " matInput placeholder="ID Водителя" type="number">
+    </mat-form-field>
+    <mat-form-field>
+    <input formControlName="id_customers" name="id_customers" matInput placeholder="ID Заказаma" type="number">
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName="id_dispatcher" name="id_dispatcher" matInput placeholder="ID Диспетчера">
+    </mat-form-field>
+    <mat-form-field>
+        <input formControlName="money" name="money" matInput placeholder="Сумма заказа">
+      </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button [mat-dialog-close]="false">CANCEL</button>
+  <button *ngIf="action === FORM_ACTION.EDIT" mat-raised-button (click)="delete()" color="accent">Delete</button>
+  <button mat-raised-button (click)="save()" color="primary">Save</button>
+</mat-dialog-actions>

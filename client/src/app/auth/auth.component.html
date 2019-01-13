@@ -1,0 +1,12 @@
+<div class="app-login">
+  <form [formGroup]="form">
+    <mat-form-field>
+      <input formControlName="email" name="email" matInput placeholder="Email" type="email">
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName="password" name="password" matInput placeholder="Пароль" type="password">
+    </mat-form-field>
+    <button mat-raised-button (click)="login()" color="primary">Войти</button>
+  </form>
+
+</div>
